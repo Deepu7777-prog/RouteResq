@@ -126,3 +126,17 @@ def verify_user(user_id):
     except Exception as e:
         db.session.rollback()
         return jsonify({"success": False, "error": str(e)}), 500
+
+
+@auth_bp.route('/auth/me', methods=['GET'])
+@auth_bp.route('/me', methods=['GET'])
+def get_current_user():
+    # Return default active demo user session if present
+    user = User.query.first()
+    if user:
+        return jsonify({
+            "success": True,
+            "user": user.to_dict()
+        }), 200
+    return jsonify({"success": False, "error": "No user session found"}), 401
+

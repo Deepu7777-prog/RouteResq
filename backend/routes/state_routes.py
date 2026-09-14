@@ -92,8 +92,10 @@ def reset_state():
     current_state = dict(DEFAULT_STATE)
     return jsonify({"success": True, "message": "State reset to baseline", "state": current_state}), 200
 
-@state_bp.route('/incidents', methods=['POST'])
+@state_bp.route('/incidents', methods=['POST', 'GET'])
 def create_incident():
+    if request.method == 'GET':
+        return jsonify({"success": True, "incidents": current_state['incidents']}), 200
     data = request.get_json() or {}
     new_inc = {
         "id": f"INC-{len(current_state['incidents']) + 101}",
@@ -107,3 +109,35 @@ def create_incident():
     }
     current_state['incidents'].append(new_inc)
     return jsonify({"success": True, "incident": new_inc}), 201
+
+@state_bp.route('/incidents/<incident_id>/status', methods=['PATCH'])
+def update_incident_status(incident_id):
+    data = request.get_json() or {}
+    status = data.get('status', 'RESOLVED')
+    for inc in current_state['incidents']:
+        if inc['id'] == incident_id:
+            inc['status'] = status
+    return jsonify({"success": True, "message": f"Incident status updated to {status}"}), 200
+
+@state_bp.route('/routes/accept', methods=['POST'])
+def accept_alternative_route():
+    data = request.get_json() or {}
+    vehicle_id = data.get('vehicleId', 'TRK001')
+    for v in current_state['vehicles']:
+        if v['id'] == vehicle_id:
+            v['status'] = 'REROUTED_SAFE'
+            v['isAffected'] = False
+    return jsonify({"success": True, "message": "Alternative route accepted"}), 200
+
+@state_bp.route('/routes/calculate', methods=['POST'])
+def calculate_route():
+    data = request.get_json() or {}
+    return jsonify({
+        "success": True,
+        "routeName": "Jowai Safe Bypass Corridor",
+        "etaFormatted": "3h 40m",
+        "distanceKm": 180,
+        "riskScore": 18,
+        "path": ["B", "J", "D"]
+    }), 200
+
