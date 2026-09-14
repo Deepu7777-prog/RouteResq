@@ -1,0 +1,24 @@
+{
+  "name": "routeresq-platform",
+  "version": "1.0.0",
+  "description": "RouteResQ - Combined AI-Powered Smart Logistics & Road Accessibility Intelligence Platform (SIH 2026)",
+  "main": "server/index.js",
+  "scripts": {
+    "postinstall": "cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build",
+    "start": "npm run build && cd server && npm start",
+    "start:python": "python backend/app.py",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm start",
+    "dev": "cd client && npm run dev"
+  },
+  "keywords": [
+    "routeresq",
+    "smart-logistics",
+    "sih2026",
+    "disaster-management",
+    "dijkstra-routing"
+  ],
+  "author": "RouteResQ Team",
+  "license": "MIT"
+}

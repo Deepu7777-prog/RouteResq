@@ -77,7 +77,16 @@ CENTRALIZED ECOSYSTEM MONITORING (Resilient Transport Sustained)
 - Python 3.9+
 - Git
 
-### 1. Frontend Setup (React + Vite)
+### 1. Combined 1-Command Startup (Unified App)
+```bash
+# Install root & subfolder dependencies
+npm install
+
+# Start Combined Platform (Builds UI & launches backend server on http://localhost:5000)
+npm start
+```
+
+### 2. Frontend Development (React + Vite)
 ```bash
 # Navigate to client directory
 cd client
@@ -89,7 +98,7 @@ npm install
 npm run dev
 ```
 
-### 2. Backend Setup (Flask REST API)
+### 3. Backend Setup (Flask REST API)
 ```bash
 # Navigate to backend directory
 cd backend
@@ -99,13 +108,6 @@ pip install -r requirements.txt
 
 # Start Flask backend server (runs on http://localhost:5000)
 python app.py
-```
-
-### 3. (Optional) Node.js Express Server
-```bash
-cd server
-npm install
-npm start
 ```
 
 ---

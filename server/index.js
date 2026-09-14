@@ -109,6 +109,19 @@ app.post("/api/route/calculate", (req, res) => {
   res.json(routeResult);
 });
 
+// Serve Built React Frontend Static Files (Combined Deployment)
+const path = require("path");
+const fs = require("fs");
+const distPath = path.join(__dirname, "../client/dist");
+
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath));
+  app.get("*", (req, res, next) => {
+    if (req.path.startsWith("/api")) return next();
+    res.sendFile(path.join(distPath, "index.html"));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`[RouteResQ API Server] Running on http://localhost:${PORT}`);
 });

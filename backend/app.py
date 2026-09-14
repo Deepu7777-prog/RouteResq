@@ -1,7 +1,8 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 from config import Config
 from models import db
+import os
 
 from routes.user_routes import user_bp
 from routes.emergency_routes import emergency_bp
@@ -42,11 +43,25 @@ def create_app(config_class=Config):
     app.register_blueprint(alert_bp, url_prefix='/api')
     app.register_blueprint(state_bp, url_prefix='/api')
 
-    # Error Handlers
-    @app.errorhandler(404)
-    def not_found(e):
-        return jsonify({"success": False, "error": "Endpoint not found"}), 404
+    # Serve Built React Frontend Static Files (Combined Deployment)
+    dist_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'client', 'dist'))
 
+    @app.route('/', defaults={'path': ''})
+    @app.route('/<path:path>')
+    def serve_frontend(path):
+        if path.startswith('api/'):
+            return jsonify({"success": False, "error": "Endpoint not found"}), 404
+        if os.path.exists(os.path.join(dist_dir, path)) and path != "":
+            return send_from_directory(dist_dir, path)
+        elif os.path.exists(os.path.join(dist_dir, 'index.html')):
+            return send_from_directory(dist_dir, 'index.html')
+        else:
+            return jsonify({
+                "status": "success",
+                "message": "RouteResQ backend API is online. Build client with 'npm run build' to serve combined UI."
+            }), 200
+
+    # Error Handlers
     @app.errorhandler(500)
     def server_error(e):
         return jsonify({"success": False, "error": "Internal server error"}), 500
@@ -57,3 +72,4 @@ app = create_app()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
