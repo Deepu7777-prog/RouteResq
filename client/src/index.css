@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gov-light text-slate-800 overflow-x-hidden font-sans antialiased;
+  }
+}
+
+/* Custom Leaflet styling for GIS maps */
+.leaflet-container {
+  background-color: #0F172A !important;
+  font-family: 'Inter', sans-serif;
+  border-radius: 12px;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #0F172A !important;
+  color: #F8FAFC !important;
+  border: 1px solid #334155 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: #0F172A !important;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Clean Card Styles */
+.card-clean {
+  @apply bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}

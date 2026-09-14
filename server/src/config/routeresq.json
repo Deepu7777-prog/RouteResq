@@ -1,0 +1,297 @@
+{
+  "users": [
+    {
+      "id": "USR-DRV-001",
+      "full_name": "Rajesh Kumar (DRV001)",
+      "email": "driver@routeresq.demo",
+      "mobile": "+91 98765 43210",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "DRIVER",
+      "verification_status": "NER Relief Transport",
+      "organization": "Kamrup",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": "USR-LOG-001",
+      "full_name": "Animesh Das",
+      "email": "logistics@routeresq.demo",
+      "mobile": "+91 98765 43211",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "LOGISTICS",
+      "verification_status": "NER Logistics Operations",
+      "organization": "Guwahati",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": "USR-AUTH-001",
+      "full_name": "Commander P. Baruah",
+      "email": "authority@routeresq.demo",
+      "mobile": "+91 98765 43212",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "AUTHORITY",
+      "verification_status": "MDoNER Disaster Infrastructure",
+      "organization": "Regional Command",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": "USR-FLD-001",
+      "full_name": "Officer T. Sangma",
+      "email": "field@routeresq.demo",
+      "mobile": "+91 98765 43213",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "FIELD_OFFICER",
+      "verification_status": "Ri-Bhoi Patrol Unit",
+      "organization": "Ri-Bhoi",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": "USR-DRV-DEMO",
+      "full_name": "Rajesh Kumar (DRV001)",
+      "email": "driver_demo",
+      "mobile": "+91 98765 43210",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "DRIVER",
+      "verification_status": "NER Relief Transport",
+      "organization": "Kamrup",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": "USR-LOG-DEMO",
+      "full_name": "Animesh Das",
+      "email": "logistics_demo",
+      "mobile": "+91 98765 43211",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "LOGISTICS",
+      "verification_status": "NER Logistics Operations",
+      "organization": "Guwahati",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": "USR-AUTH-DEMO",
+      "full_name": "Commander P. Baruah",
+      "email": "authority_demo",
+      "mobile": "+91 98765 43212",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "AUTHORITY",
+      "verification_status": "MDoNER Disaster Infrastructure",
+      "organization": "Regional Command",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    },
+    {
+      "id": "USR-FLD-DEMO",
+      "full_name": "Officer T. Sangma",
+      "email": "field_demo",
+      "mobile": "+91 98765 43213",
+      "password_hash": "$2a$10$xMRfSzmdbkGPLP2V.5qiJe7iGKEJ9Zls3R97PxLz3apKeJ2IMwhKm",
+      "role": "FIELD_OFFICER",
+      "verification_status": "Ri-Bhoi Patrol Unit",
+      "organization": "Ri-Bhoi",
+      "district": null,
+      "created_at": null,
+      "updated_at": null
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "TRK001",
+      "vehicle_number": "AS-01-HC-4092",
+      "driver_id": "USR-DRV-001",
+      "logistics_manager_id": "USR-LOG-001",
+      "cargo_type": "Essential Medicines & Vaccines",
+      "current_latitude": 25.9004,
+      "current_longitude": 91.8804,
+      "status": null,
+      "created_at": null
+    },
+    {
+      "id": "TRK002",
+      "vehicle_number": "AS-01-HC-8812",
+      "driver_id": "USR-DRV-001",
+      "logistics_manager_id": "USR-LOG-001",
+      "cargo_type": "Disaster Relief Rations",
+      "current_latitude": 26.3462,
+      "current_longitude": 92.6841,
+      "status": null,
+      "created_at": null
+    },
+    {
+      "id": "TRK003",
+      "vehicle_number": "AS-01-HC-3301",
+      "driver_id": "USR-DRV-001",
+      "logistics_manager_id": "USR-LOG-001",
+      "cargo_type": "Emergency Medical Oxygen Cylinders",
+      "current_latitude": 26.45,
+      "current_longitude": 92.2,
+      "status": null,
+      "created_at": null
+    }
+  ],
+  "roads": [
+    {
+      "id": "R01",
+      "road_name": "NH-40 Guwahati-Nongpoh Segment",
+      "start_location": "A",
+      "end_location": "B",
+      "distance_km": 52,
+      "status": "BLOCKED",
+      "risk_score": 100,
+      "latitude": 26.02,
+      "longitude": 91.8,
+      "updated_at": "R02"
+    },
+    {
+      "id": "R02",
+      "road_name": "NH-40 Nongpoh-Shillong Pass",
+      "start_location": "B",
+      "end_location": "C",
+      "distance_km": 48,
+      "status": "BLOCKED",
+      "risk_score": 100,
+      "latitude": 25.75,
+      "longitude": 91.88,
+      "updated_at": "R02"
+    },
+    {
+      "id": "R03",
+      "road_name": "NH-6 Shillong-Silchar Highway",
+      "start_location": "C",
+      "end_location": "D",
+      "distance_km": 210,
+      "status": "BLOCKED",
+      "risk_score": 100,
+      "latitude": 25.2,
+      "longitude": 92.3,
+      "updated_at": "R02"
+    },
+    {
+      "id": "R04",
+      "road_name": "NH-27 Guwahati-Nagaon East",
+      "start_location": "A",
+      "end_location": "E",
+      "distance_km": 120,
+      "status": "BLOCKED",
+      "risk_score": 100,
+      "latitude": 26.24,
+      "longitude": 92.21,
+      "updated_at": "R02"
+    },
+    {
+      "id": "R05",
+      "road_name": "NH-27 Nagaon-Haflong Pass",
+      "start_location": "E",
+      "end_location": "F",
+      "distance_km": 150,
+      "status": "BLOCKED",
+      "risk_score": 100,
+      "latitude": 25.76,
+      "longitude": 92.84,
+      "updated_at": "R02"
+    },
+    {
+      "id": "R06",
+      "road_name": "NH-27 Haflong-Silchar Link",
+      "start_location": "F",
+      "end_location": "D",
+      "distance_km": 105,
+      "status": "BLOCKED",
+      "risk_score": 100,
+      "latitude": 25,
+      "longitude": 92.89,
+      "updated_at": "R02"
+    },
+    {
+      "id": "R07",
+      "road_name": "NH-15 Guwahati-Tezpur Corridor",
+      "start_location": "A",
+      "end_location": "G",
+      "distance_km": 175,
+      "status": "BLOCKED",
+      "risk_score": 100,
+      "latitude": 26.45,
+      "longitude": 92.2,
+      "updated_at": "R02"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "INC-0230",
+      "incident_type": "LANDSLIDE",
+      "description": "High severity landslide blocking Nongpoh-Shillong Pass",
+      "severity": "HIGH",
+      "road_id": "R02",
+      "reported_by": "Officer T. Sangma",
+      "latitude": 25.75,
+      "longitude": 91.88,
+      "image_url": null,
+      "status": null,
+      "created_at": null,
+      "updated_at": null
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "DEL-101",
+      "vehicle_id": "TRK001",
+      "cargo_type": "Essential Medicines & Vaccines",
+      "source": "Guwahati Hub (Node A)",
+      "destination": "Silchar Remote District (Node D)",
+      "status": "Guwahati (A) → Nagaon (E) → Haflong (F) → Silchar (D)",
+      "current_route": "DEL-101",
+      "estimated_arrival": null,
+      "created_at": null
+    }
+  ],
+  "routes": [],
+  "notifications": [
+    {
+      "id": "ALT-SEED-1",
+      "user_id": "USR-AUTH-001",
+      "title": "System Initialization",
+      "message": "RouteResQ Command Engine online. All NER primary transit nodes connected.",
+      "type": "SYSTEM",
+      "is_read": null,
+      "created_at": null
+    },
+    {
+      "id": "ALT-SEED-2",
+      "user_id": "USR-LOG-001",
+      "title": "Delivery Dispatch",
+      "message": "TRK001 carrying Essential Medicines dispatched from Guwahati to Silchar.",
+      "type": "DELIVERY",
+      "is_read": null,
+      "created_at": null
+    },
+    {
+      "id": "ALT-SEED-3",
+      "user_id": "USR-DRV-001",
+      "title": "Assigned Trip Active",
+      "message": "TRK001 assigned route A-B-C-D. Current road status SAFE.",
+      "type": "ROUTE_UPDATE",
+      "is_read": null,
+      "created_at": null
+    },
+    {
+      "id": "ALT-1788356000252-500",
+      "user_id": "USR-DRV-001",
+      "title": "✓ ROUTE UPDATED",
+      "message": "New bypass route accepted. Journey continuing safely.",
+      "type": "ROUTE_UPDATE",
+      "is_read": null,
+      "created_at": null
+    }
+  ]
+}
