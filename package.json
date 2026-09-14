@@ -5,7 +5,7 @@
   "main": "backend/app.py",
   "scripts": {
     "postinstall": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
     "start": "cd backend && python app.py",
     "start:backend": "cd backend && python app.py",
     "start:client": "cd client && npm run dev",
